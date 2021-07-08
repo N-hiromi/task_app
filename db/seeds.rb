@@ -5,3 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Task.create(id: 1, title: "鳩の日", start: "2021/07/07", end: "2021/07/08", shujitu: true, memo: "今日は鳩をお祝いしましょう")

@@ -1,0 +1,29 @@
+<h2 class="mt-4">スケジュール詳細</h2>
+<div class="col-6">
+  <table class="table column-table table-bordered border-dark">
+    <tr>
+      <th class="text-center">タイトル</th>
+      <td><%= @task.title %></td>
+    </tr>
+    <tr>
+      <th class="text-center">開始日</th>
+      <td><%= @task.start %></td>
+    </tr>
+    <tr>
+      <th class="text-center">終了日</th>
+      <td><%= @task.end %></td>
+    </tr>
+    <tr>
+      <th class="text-center">終日</th>
+      <td class="text-center">
+        <% if @task.shujitu %>
+        <%= " ◯ " %>
+        <% end %></td>
+    </tr>
+    <tr>
+      <th class="text-center">スケジュールメモ</th>
+      <td><%= @task.memo %></td>
+    </tr>
+    </table>
+</div>
+<%= link_to("一覧へ戻る", "/tasks") %>

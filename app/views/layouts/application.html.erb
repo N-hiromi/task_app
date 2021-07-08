@@ -10,6 +10,20 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header class="sticky-top p-3">
+      <h1>Ruby on rails スケジュール管理アプリ</h1>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <footer class="fixed-bottom p-3">
+      <h2><%= Date.current.strftime('現在時刻：%Y/%m/%d') %>　スケジュール合計：<%= count %></h2>
+    </footer>
   </body>
 </html>

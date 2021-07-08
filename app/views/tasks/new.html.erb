@@ -1,0 +1,30 @@
+<h2 class="mt-4">スケジュール詳細</h2>
+<div class="col-6">
+  <%= form_with model: @task do |f| %>
+    <table class="table column-table table-bordered border-dark">
+      <tr>
+        <th class="text-center">タイトル</th>
+        <td><%= f.text_field :title, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <th class="text-center">開始日</th>
+        <td><%= f.date_field :start, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <th class="text-center">終了日</th>
+        <td><%= f.date_field :end, class: "form-control" %></td>
+      </tr>
+      <tr>
+        <th class="text-center">終日</th>          <td class="text-center"><%= f.check_box:shujitu %><p>終日の場合はチェックを入れます</p></td>
+      </tr>
+      <tr>
+        <th class="text-center">スケジュールメモ</th>
+          <td><%= f.text_area :memo, class: "form-control" %></td>
+      </tr>
+    </table>
+    <div class"form-group">
+      <%= f.submit "スケジュールを新規登録する", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+<%= link_to("スケジュール一覧へ戻る", "/tasks") %>
