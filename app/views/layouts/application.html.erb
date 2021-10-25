@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TaskApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <header class="sticky-top p-2">
+      <h1>Ruby on rails スケジュール管理アプリ</h1>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <footer class="fixed-bottom p-2">
+      <h2><%= Date.current.strftime('現在時刻：%Y/%m/%d') %>　スケジュール合計：<%= count %></h2>
+    </footer>
+  </body>
+</html>
